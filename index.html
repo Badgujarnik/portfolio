@@ -17,8 +17,13 @@
       --border: #2b405d;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -28,7 +33,9 @@
       line-height: 1.7;
     }
 
-    a { color: var(--blue); }
+    a {
+      color: var(--blue);
+    }
 
     nav {
       padding: 20px 7%;
@@ -52,7 +59,9 @@
       font-size: 15px;
     }
 
-    nav a:hover { color: var(--blue); }
+    nav a:hover {
+      color: var(--blue);
+    }
 
     .hero {
       max-width: 1200px;
@@ -77,18 +86,26 @@
       margin: 20px 0;
     }
 
-    h1 span { color: var(--blue); }
+    h1 span {
+      color: var(--blue);
+    }
 
     h2 {
       font-size: 32px;
       margin: 0 0 24px;
     }
 
-    h3 { margin-bottom: 10px; }
+    h3 {
+      margin-bottom: 10px;
+    }
 
-    p { color: var(--muted); }
+    p {
+      color: var(--muted);
+    }
 
-    .hero p { font-size: 18px; }
+    .hero p {
+      font-size: 18px;
+    }
 
     .photo-wrap {
       display: flex;
@@ -118,7 +135,9 @@
       transition: transform .2s;
     }
 
-    .btn:hover { transform: translateY(-3px); }
+    .btn:hover {
+      transform: translateY(-3px);
+    }
 
     .btn.secondary {
       background: transparent;
@@ -162,10 +181,16 @@
 
     .project-image {
       width: 100%;
-      height: 210px;
-      object-fit: cover;
+      height: auto;
+      display: block;
       border-radius: 10px;
       margin-bottom: 15px;
+      border: 1px solid #405a78;
+      transition: transform .2s;
+    }
+
+    .project-image:hover {
+      transform: scale(1.015);
     }
 
     .project-placeholder {
@@ -184,7 +209,15 @@
       margin-top: 12px;
     }
 
-    .project-detail strong { color: white; }
+    .project-detail strong {
+      color: white;
+    }
+
+    .image-hint {
+      font-size: 12px;
+      margin: -5px 0 15px;
+      color: var(--muted);
+    }
 
     footer {
       text-align: center;
@@ -200,13 +233,21 @@
         gap: 35px;
       }
 
-      .photo-wrap { grid-row: 1; }
+      .photo-wrap {
+        grid-row: 1;
+      }
 
-      .profile-photo { max-width: 240px; }
+      .profile-photo {
+        max-width: 240px;
+      }
 
-      .grid { grid-template-columns: 1fr; }
+      .grid {
+        grid-template-columns: 1fr;
+      }
 
-      nav a { margin: 0 12px 0 0; }
+      nav a {
+        margin: 0 12px 0 0;
+      }
     }
   </style>
 </head>
@@ -216,6 +257,7 @@
   <!-- NAVIGATION -->
   <nav>
     <strong>Nikita Badgujar</strong>
+
     <div>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -246,11 +288,18 @@
         at Voltaira GmbH.
       </p>
 
-      <a class="btn" href="#projects">Explore My Projects</a>
-      <a class="btn secondary" href="#contact">Get in Touch</a>
-      <a class="btn secondary"
-         href="Nikita_Badgujar_CV.pdf"
-         download>
+      <a class="btn" href="#projects">
+        Explore My Projects
+      </a>
+
+      <a class="btn secondary" href="#contact">
+        Get in Touch
+      </a>
+
+      <a
+        class="btn secondary"
+        href="Nikita_Badgujar_CV.pdf"
+        download>
         Download CV
       </a>
     </div>
@@ -314,7 +363,8 @@
     <h2>Professional Experience</h2>
 
     <div class="card">
-      <small>June 2024 - May 2025 | Pfullingen, Germany</small>
+      <small>June 2024 - May 2025 | Germany</small>
+
       <h3>Working Student - Business Intelligence</h3>
 
       <strong>
@@ -348,6 +398,7 @@
         </div>
 
         <small>Power BI | MySQL</small>
+
         <h3>Sales Insights Dashboard</h3>
 
         <p>
@@ -373,53 +424,82 @@
         </p>
       </article>
 
-      <!-- HR ANALYTICS WITH LINKEDIN VIDEO -->
+      <!-- HR ANALYTICS WITH REAL SCREENSHOT -->
       <article class="card">
-        <div class="project-placeholder">
-          HR Analytics Dashboard | Tableau
-        </div>
+
+        <a
+          href="HR_Dashboard.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Open full-size HR Analytics dashboard">
+
+          <img
+            src="HR_Dashboard.png"
+            alt="HR Analytics dashboard with employee count, attrition rate, age distribution and job satisfaction"
+            class="project-image"
+            loading="lazy">
+
+        </a>
+
+        <p class="image-hint">
+          Click the dashboard image to view it full size.
+        </p>
 
         <small>Tableau | Excel | HR Analytics</small>
+
         <h3>HR Analytics Dashboard</h3>
 
         <p>
           Developed an interactive Tableau dashboard
-          to analyze workforce performance, employee
-          attrition, and job satisfaction.
+          to analyze workforce trends, employee attrition,
+          and job satisfaction.
         </p>
 
         <p class="project-detail">
           <strong>Business Objective:</strong>
-          Help organizations understand workforce trends,
-          employee performance, and attrition.
+          Help organizations understand workforce metrics
+          and identify employee attrition patterns.
         </p>
 
         <p class="project-detail">
-          <strong>Key Analysis:</strong>
-          Employee performance KPIs, departmental
-          distribution, attrition by gender,
-          age groups, and job satisfaction.
+          <strong>Dashboard KPIs:</strong>
+          Employee count, attrition count, attrition rate,
+          active employees, and average age.
+        </p>
+
+        <p class="project-detail">
+          <strong>Key Visualizations:</strong>
+          Department-wise attrition, employees by age group,
+          job satisfaction by role, education-field attrition,
+          and attrition by gender.
         </p>
 
         <p class="project-detail">
           <strong>Interactive Features:</strong>
-          Dashboard filters and interactive analysis
-          for exploring workforce trends.
+          Education filter and age-group analysis.
         </p>
 
         <p class="project-detail">
-          <strong>Outcome:</strong>
-          Reduced manual reporting effort by
-          approximately 3-4 hours per day,
-          as documented in the project.
+          <strong>Tools:</strong>
+          Tableau and Excel.
         </p>
 
-        <a class="btn"
-           href="https://lnkd.in/p/eZPqkJb3"
-           target="_blank"
-           rel="noopener noreferrer">
+        <a
+          class="btn"
+          href="https://lnkd.in/p/eZPqkJb3"
+          target="_blank"
+          rel="noopener noreferrer">
           &#9654; Watch Dashboard Demo
         </a>
+
+        <a
+          class="btn secondary"
+          href="HR_Dashboard.png"
+          target="_blank"
+          rel="noopener noreferrer">
+          View Full Dashboard
+        </a>
+
       </article>
 
       <!-- REAL-TIME ANALYTICS -->
@@ -429,6 +509,7 @@
         </div>
 
         <small>Python | Pandas | APIs | Streamlit</small>
+
         <h3>Real-Time Data Analytics Dashboard</h3>
 
         <p>
@@ -463,6 +544,7 @@
         </div>
 
         <small>Python | YOLO | Computer Vision</small>
+
         <h3>Automated Trash-Bin Detection & Mapping</h3>
 
         <p>
@@ -497,22 +579,25 @@
       Business Intelligence across Germany.
     </p>
 
-    <a class="btn"
-       href="https://www.linkedin.com/in/nikita-badgujar-713a29209/"
-       target="_blank"
-       rel="noopener noreferrer">
+    <a
+      class="btn"
+      href="https://www.linkedin.com/in/nikita-badgujar-713a29209/"
+      target="_blank"
+      rel="noopener noreferrer">
       LinkedIn
     </a>
 
-    <a class="btn secondary"
-       href="https://github.com/Badgujarnik"
-       target="_blank"
-       rel="noopener noreferrer">
+    <a
+      class="btn secondary"
+      href="https://github.com/Badgujarnik"
+      target="_blank"
+      rel="noopener noreferrer">
       GitHub
     </a>
 
-    <a class="btn secondary"
-       href="mailto:badgujarnikita59@gmail.com">
+    <a
+      class="btn secondary"
+      href="mailto:badgujarnikita59@gmail.com">
       Email Me
     </a>
   </section>
