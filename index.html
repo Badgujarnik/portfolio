@@ -1,113 +1,511 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Nikita Badgujar - Business Intelligence and Data Analytics Portfolio">
-<title>Nikita Badgujar | Data Analytics Portfolio</title>
-<style>
-:root{--navy:#0b1730;--blue:#38bdf8;--text:#e8eef8;--muted:#a8b8d0}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,sans-serif;background:#0b1730;color:var(--text);line-height:1.65}
-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 8%;background:#101f3a;flex-wrap:wrap}
-nav strong{color:white;font-size:20px}
-nav a{color:#dce8f8;text-decoration:none;margin-left:18px}
-nav a:hover,a:hover{color:var(--blue)}
-.hero{padding:110px 8% 95px;max-width:1050px;margin:auto}
-.eyebrow{color:var(--blue);font-weight:bold;letter-spacing:2px}
-h1{font-size:clamp(38px,6vw,70px);line-height:1.1;margin:20px 0}
-h1 span{color:var(--blue)}
-h2{font-size:32px;margin-bottom:22px}
-p{color:var(--muted)}
-.hero p{max-width:720px;font-size:18px}
-.btn{display:inline-block;background:var(--blue);color:#061326;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:bold;margin:12px 12px 0 0}
-.btn.secondary{background:transparent;border:1px solid #55708e;color:white}
-section{padding:55px 8%;max-width:1150px;margin:auto}
-.card{background:#142642;border:1px solid #263b59;padding:26px;border-radius:14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.tag{display:inline-block;padding:7px 13px;margin:5px;background:#1c3553;border-radius:20px;color:#c5e7ff;font-size:14px}
-small{color:var(--blue)}
-footer{text-align:center;padding:35px;color:var(--muted);border-top:1px solid #263b59}
-a{color:var(--blue)}
-@media(max-width:600px){nav{padding:18px 6%}nav a{margin:0 12px 0 0}.hero{padding:75px 6%}section{padding:40px 6%}}
-.profile-photo {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #38bdf8;
-  margin-bottom: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nikita Badgujar - Business Intelligence and Data Analytics Portfolio">
+  <title>Nikita Badgujar | Data Analytics Portfolio</title>
+
+  <style>
+    :root {
+      --navy: #0b1730;
+      --panel: #142642;
+      --blue: #38bdf8;
+      --text: #e8eef8;
+      --muted: #a8b8d0;
+      --border: #2b405d;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--navy);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: var(--blue); }
+
+    nav {
+      padding: 20px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: #101f3a;
+    }
+
+    nav strong {
+      color: white;
+      font-size: 21px;
+    }
+
+    nav a {
+      color: #dce8f8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 15px;
+    }
+
+    nav a:hover { color: var(--blue); }
+
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 7%;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 14px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 65px);
+      line-height: 1.15;
+      margin: 20px 0;
+    }
+
+    h1 span { color: var(--blue); }
+
+    h2 {
+      font-size: 32px;
+      margin: 0 0 24px;
+    }
+
+    h3 { margin-bottom: 10px; }
+
+    p { color: var(--muted); }
+
+    .hero p { font-size: 18px; }
+
+    .photo-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-photo {
+      width: 100%;
+      max-width: 350px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 4px solid var(--blue);
+      box-shadow: 0 20px 55px rgba(0,0,0,.35);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      margin: 12px 10px 0 0;
+      border-radius: 9px;
+      background: var(--blue);
+      color: #061326;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      transition: transform .2s;
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+
+    .btn.secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid #617b9a;
+    }
+
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 65px 7%;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 26px;
+      border-radius: 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #1c3553;
+      color: #c5e7ff;
+      border-radius: 20px;
+      padding: 7px 14px;
+      margin: 5px;
+      font-size: 14px;
+    }
+
+    small {
+      color: var(--blue);
+      font-weight: bold;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .project-placeholder {
+      background: #1c3553;
+      border: 1px dashed #59728f;
+      border-radius: 10px;
+      padding: 45px 15px;
+      margin-bottom: 15px;
+      color: #c5d8ee;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .project-detail {
+      font-size: 14px;
+      margin-top: 12px;
+    }
+
+    .project-detail strong { color: white; }
+
+    footer {
+      text-align: center;
+      padding: 35px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 7%;
+        gap: 35px;
+      }
+
+      .photo-wrap { grid-row: 1; }
+
+      .profile-photo { max-width: 240px; }
+
+      .grid { grid-template-columns: 1fr; }
+
+      nav a {
+        margin: 0 12px 0 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<nav>
-<strong>Nikita Badgujar</strong>
-<div><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
-</nav>
-<header class="hero">  
-<img src="Picture.JPG"
-     alt="Nikita Badgujar"
-     class="profile-photo">
-<div class="eyebrow">BUSINESS INTELLIGENCE & DATA ANALYTICS</div>
-<h1>Hi, I'm <span>Nikita Badgujar.</span></h1>
-<p>I transform data into meaningful business insights through interactive dashboards, analytics, and reporting.</p>
-<p>M.Sc. Management & Data Science at Leuphana University | Former Working Student in Business Intelligence at Voltaira GmbH.</p>
-<a class="btn" href="#projects">Explore My Projects</a>
-<a class="btn secondary" href="#contact">Get in Touch</a>
-</header>
-<section id="about">
-<h2>About Me</h2>
-<p>I am a Master's student in Management & Data Science at Leuphana University, Germany, with hands-on experience in Business Intelligence, KPI reporting, dashboard development, and data validation. I enjoy using Power BI, SQL, Python, and other analytics tools to support data-driven decisions.</p>
-</section>
-<section id="skills">
-<h2>Technical Skills</h2>
-<div>
-<span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Qlik Sense</span><span class="tag">Advanced Excel</span><span class="tag">Snowflake</span><span class="tag">Tableau</span><span class="tag">Pandas</span><span class="tag">Data Modeling</span><span class="tag">KPI Reporting</span><span class="tag">Power Query (Basic)</span><span class="tag">DAX (Basic)</span>
-</div>
-</section>
-<section id="experience">
-<h2>Professional Experience</h2>
-<div class="card">
-<small>June 2024 - May 2025 | Pfullingen, Germany</small>
-<h3>Working Student - Business Intelligence</h3>
-<strong>Foxconn Interconnect Technology Voltaira GmbH</strong>
-<p>Developed Power BI and Qlik Sense dashboards for operational KPI reporting. Analyzed and validated data using SQL, Python, and Excel. Prepared reporting datasets and collaborated with cross-functional teams to support business decisions and process improvements.</p>
-</div>
-</section>
-<section id="projects">
-<h2>Featured Projects</h2>
-<div class="grid">
-<article class="card">
-<small>Power BI | MySQL</small>
-<h3>Sales Insights Dashboard</h3>
-<p>Interactive sales analytics dashboard exploring revenue, sales trends, and key performance indicators to support business decisions.</p>
-</article>
-<article class="card">
-<small>Tableau | Excel</small>
-<h3>HR Analytics Dashboard</h3>
-<p>Workforce and attrition analytics with KPI visualizations. The project reduced manual reporting effort by approximately 3-4 hours per day.</p>
-</article>
-<article class="card">
-<small>Python | Pandas | APIs | Streamlit</small>
-<h3>Real-Time Data Analytics</h3>
-<p>Collected and processed API data and developed interactive visualizations for real-time analysis and decision-making.</p>
-</article>
-<article class="card">
-<small>Python | YOLO | Computer Vision</small>
-<h3>Automated Trash-Bin Detection</h3>
-<p>Developed an object-detection model to identify and map urban trash bins using annotated datasets.</p>
-</article>
-</div>
-</section>
-<section id="contact">
-<h2>Let's Connect</h2>
-<p>Open to junior full-time and working student opportunities in Data Analytics and Business Intelligence across Germany.</p>
-<a class="btn" href="https://www.linkedin.com/in/nikita-badgujar-713a29209/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-<a class="btn secondary" href="https://github.com/Badgujarnik" target="_blank" rel="noopener noreferrer">GitHub</a>
-</section>
-<footer>© 2026 Nikita Badgujar | Data Analytics Portfolio</footer>
+
+  <nav>
+    <strong>Nikita Badgujar</strong>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <header class="hero">
+
+    <div>
+      <div class="eyebrow">
+        BUSINESS INTELLIGENCE & DATA ANALYTICS
+      </div>
+
+      <h1>Hi, I'm <span>Nikita Badgujar.</span></h1>
+
+      <p>
+        I transform data into meaningful business insights
+        through interactive dashboards, data analysis,
+        and business reporting.
+      </p>
+
+      <p>
+        M.Sc. Management & Data Science at Leuphana University,
+        Germany. Former Working Student in Business Intelligence
+        at Voltaira GmbH.
+      </p>
+
+      <a class="btn" href="#projects">Explore My Projects</a>
+      <a class="btn secondary" href="#contact">Get in Touch</a>
+      <a class="btn secondary"
+         href="Nikita_Badgujar_CV.pdf"
+         download>
+        Download CV
+      </a>
+    </div>
+
+    <div class="photo-wrap">
+      <img
+        src="Picture.JPG"
+        alt="Professional portrait of Nikita Badgujar"
+        class="profile-photo">
+    </div>
+
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+
+    <p>
+      I am a Master's student in Management & Data Science
+      at Leuphana University with hands-on experience in
+      Business Intelligence, dashboard development,
+      KPI reporting, and data validation.
+    </p>
+
+    <p>
+      During my time at Foxconn Interconnect Technology
+      Voltaira GmbH, I worked with Power BI, Qlik Sense,
+      SQL, Python, and Excel to support operational reporting
+      and business decisions.
+    </p>
+
+    <p>
+      I am interested in junior full-time and working student
+      opportunities in Data Analytics, Business Intelligence,
+      and Reporting across Germany.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+
+    <div>
+      <span class="tag">Power BI</span>
+      <span class="tag">SQL</span>
+      <span class="tag">Python</span>
+      <span class="tag">Qlik Sense</span>
+      <span class="tag">Advanced Excel</span>
+      <span class="tag">Snowflake</span>
+      <span class="tag">Tableau</span>
+      <span class="tag">Pandas</span>
+      <span class="tag">Data Modeling</span>
+      <span class="tag">KPI Reporting</span>
+      <span class="tag">Data Validation</span>
+      <span class="tag">Power Query (Basic)</span>
+      <span class="tag">DAX (Basic)</span>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>Professional Experience</h2>
+
+    <div class="card">
+      <small>June 2024 - May 2025 | Germany</small>
+
+      <h3>Working Student - Business Intelligence</h3>
+
+      <strong>
+        Foxconn Interconnect Technology Voltaira GmbH
+      </strong>
+
+      <p>
+        Developed Power BI and Qlik Sense dashboards
+        for operational KPI reporting and performance tracking.
+      </p>
+
+      <p>
+        Analyzed and validated data using SQL, Python,
+        and Excel. Prepared structured reporting datasets
+        and collaborated with cross-functional teams
+        to support business decisions and process improvements.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Featured Projects</h2>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="project-placeholder">
+          Sales Dashboard Screenshot Coming Soon
+        </div>
+
+        <small>Power BI | MySQL</small>
+        <h3>Sales Insights Dashboard</h3>
+
+        <p>
+          Built an interactive dashboard to analyze
+          revenue, sales trends, and key performance indicators.
+        </p>
+
+        <p class="project-detail">
+          <strong>Problem:</strong>
+          Understand business sales performance and trends.
+        </p>
+
+        <p class="project-detail">
+          <strong>Approach:</strong>
+          Used MySQL data and Power BI visualizations
+          to explore sales metrics.
+        </p>
+
+        <p class="project-detail">
+          <strong>Outcome:</strong>
+          Created visual reports to communicate insights
+          and support business decisions.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="project-placeholder">
+          HR Dashboard Screenshot Coming Soon
+        </div>
+
+        <small>Tableau | Excel</small>
+        <h3>HR Analytics Dashboard</h3>
+
+        <p>
+          Developed an HR analytics dashboard to examine
+          workforce trends, employee attrition,
+          and performance.
+        </p>
+
+        <p class="project-detail">
+          <strong>Problem:</strong>
+          Analyze workforce metrics and reduce
+          repetitive manual reporting.
+        </p>
+
+        <p class="project-detail">
+          <strong>Approach:</strong>
+          Used Tableau and Excel to build
+          KPI visualizations.
+        </p>
+
+        <p class="project-detail">
+          <strong>Outcome:</strong>
+          Reduced manual reporting effort by
+          approximately 3-4 hours per day,
+          as documented in the project.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="project-placeholder">
+          Real-Time Dashboard Screenshot Coming Soon
+        </div>
+
+        <small>Python | Pandas | APIs | Streamlit</small>
+        <h3>Real-Time Data Analytics Dashboard</h3>
+
+        <p>
+          Collected and processed real-time data
+          from REST APIs and created interactive
+          visualizations.
+        </p>
+
+        <p class="project-detail">
+          <strong>Problem:</strong>
+          Make frequently updated datasets
+          easier to understand.
+        </p>
+
+        <p class="project-detail">
+          <strong>Approach:</strong>
+          Used Python, Pandas, and interactive
+          dashboard technologies.
+        </p>
+
+        <p class="project-detail">
+          <strong>Outcome:</strong>
+          Built visualizations supporting
+          faster data interpretation.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="project-placeholder">
+          Computer Vision Project Image Coming Soon
+        </div>
+
+        <small>Python | YOLO | Computer Vision</small>
+        <h3>Automated Trash-Bin Detection & Mapping</h3>
+
+        <p>
+          Developed a YOLO-based object detection
+          model to identify and map urban trash bins.
+        </p>
+
+        <p class="project-detail">
+          <strong>Approach:</strong>
+          Worked with annotated datasets,
+          object detection, model evaluation,
+          and spatial mapping.
+        </p>
+
+        <p class="project-detail">
+          <strong>Outcome:</strong>
+          Generated mapping outputs to visualize
+          detected objects.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Let's Connect</h2>
+
+    <p>
+      Open to junior full-time and working student
+      opportunities in Data Analytics and
+      Business Intelligence across Germany.
+    </p>
+
+    <a class="btn"
+       href="https://www.linkedin.com/in/nikita-badgujar-713a29209/"
+       target="_blank"
+       rel="noopener noreferrer">
+      LinkedIn
+    </a>
+
+    <a class="btn secondary"
+       href="https://github.com/Badgujarnik"
+       target="_blank"
+       rel="noopener noreferrer">
+      GitHub
+    </a>
+
+    <a class="btn secondary"
+       href="mailto:badgujarnikita59@gmail.com">
+      Email Me
+    </a>
+  </section>
+
+  <footer>
+    © 2026 Nikita Badgujar | Data Analytics Portfolio
+  </footer>
+
 </body>
 </html>
